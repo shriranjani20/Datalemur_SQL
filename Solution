@@ -1,0 +1,5 @@
+select candidate_id from (select  candidate_id,count(candidate_id) as cn  from candidates c
+where skill in ('Python','Tableau','PostgreSQL')
+group by candidate_id) x 
+where x.cn=3
+order by 1;
